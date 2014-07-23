@@ -15,7 +15,7 @@ Install
  1. Generating folders
      
 
-> $ sh run.py
+> $ sh run.sh
 
  2. Ready To Contribute :)
  

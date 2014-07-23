@@ -1,20 +1,25 @@
 import os,sys,json
-
-def addList(path):
-	generateFolder(path)
-def getConfig():
+def getConfig(args):
 	stream = open("config.json", 'r')
 	config = json.load(stream)
-	generateFolders(config)
-def generateFolders(config):
+	generateFolders(config,args)
+def generateFolders(config,args):
 	for (i,v) in enumerate(config["paths"]):
-		addList(v)
+		generateFolder(v,args)
 def init():
-	getConfig()
-def generateFolder(path):
+	args = sys.argv
+	debug = 0
+	for (i,v) in enumerate(args):
+		if v == "--debug":
+			debug = 1
+	data = {"debug":debug}
+	getConfig(data)
+def generateFolder(path , data):
 	if os.path.exists(path):
-    		print "[\033[93mWARN\033[0m]" + path + " already existed!"
+			if data["debug"] == 1:
+    				print "[\033[93mWARN\033[0m]" + path + " already existed!"
    	else:
     		os.makedirs(path)
-    		print "[\033[92mDONE\033[0m]" + path + " generated"
+    		if data["debug"] == 1:
+    				print "[\033[92mDONE\033[0m]" + path + " generated"
 init()

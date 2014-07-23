@@ -1,0 +1,10 @@
+{
+	"paths":
+	[
+		"docs/tr",
+		"docs/en",
+		"assets/css",
+		"assets/js",
+		"assets/img"	
+	]
+}

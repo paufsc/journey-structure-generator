@@ -17,5 +17,5 @@ Install
 
 > $ sh run.sh
 
- 2. Ready To Contribute :)
+ --- Ready To Contribute :)
  

@@ -15,7 +15,7 @@ Install
  1. Generating folders
      
 
-> $ python create-assets.py
+> $ sh run.py
 
  2. Ready To Contribute :)
  
